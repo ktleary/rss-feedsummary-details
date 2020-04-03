@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "extends": ["plugin:github/recommended", "prettier"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "plugins": ["github"],
+  "rules": {
+    "prefer-promise-reject-errors": ["off"],
+    "no-return-assign": ["off"]
+  }
+}
