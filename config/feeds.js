@@ -1,5 +1,3 @@
-const constants = require('../constants');
-
 const activeFeeds = [
   'https://www.scmp.com/rss/320663/feed',
   'https://webfeeds.brookings.edu/brookingsrss/topics/technology',
@@ -44,79 +42,4 @@ const activeFeeds = [
   'http://news.mit.edu/rss/topic/artifici'
 ];
 
-const feedGroups = {
-  [constants.FEEDGROUP.CHINABUSINESS]: ['https://36kr.com/feed']
-};
-
-module.exports = { activeFeeds, feedGroups };
-/*
-// Allstars
-// from https://guides.library.yale.edu/c.php?g=296224&p=5088008
-// https://ec.europa.eu/information_society/newsroom/cf/rss-list.cfm
-- https://www.lawfareblog.com/feed/
-- http://carnegieendowment.org/rss/solr/?fa=feeds&lang=en&fltr={!raw%20f=taxonomyTag}::1279:1531:Technology
-- https://www.cato.org/rss/recent-opeds
-// TECH
-https://webfeeds.brookings.edu/brookingsrss/topics/technology
-// Monetary Policy
-'https://webfeeds.brookings.edu/brookingsrss/topics/monetarypolicy'
-
-
-'https://www.xinwengao.com/china-pr/business-finance/feed/'
-'https://www.scmp.com/rss/320663/feed'
-'http://www.xinhuanet.com/english/rss/scirss.xml'
-'https://www.scmp.com/rss/320663/feed'
-'https://36kr.com/feed',
-  'https://news.mingpao.com/rss/ins/s00002.xml',
-  'http://www.ftchinese.com/rss/news',
-  'http://www.ftchinese.com/rss/hotstoryby7day',
-  'http://www.ftchinese.com/rss/letter',
-  'https://www.worldjournal.com/caterss/?cat=207792'
-https://dedicated.wallstreetcn.com/rss.xml
-"https://www.worldjournal.com/caterss/?cat=207853",
-"https://www.worldjournal.com/caterss/?cat=207853",
-"http://cn.engadget.com/rss.xml",
-"https://36kr.com/feed",
-"https://news.mingpao.com/rss/ins/s00002.xml",
-"http://www.ftchinese.com/rss/news",
-"http://www.ftchinese.com/rss/hotstoryby7day",
-"http://www.ftchinese.com/rss/letter",
-"https://www.worldjournal.com/caterss/?cat=207792"
-good:
-http://cn.engadget.com/rss.xml
-https://36kr.com/feed
-https://news.mingpao.com/rss/ins/s00002.xml
-https://dedicated.wallstreetcn.com/rss.xml
-http://www.ftchinese.com/rss/news
-http://www.ftchinese.com/rss/hotstoryby7day
-http://www.ftchinese.com/rss/letter
-https://www.worldjournal.com/caterss/?cat=207792
-https://www.worldjournal.com/caterss/?cat=207853
-
-
-
-
-https://libguides.mit.edu/c.php?g=176072&p=1160813
-
-// not good
-http://www.adaymag.com/feed (seems literary good?)
-http://www.duxieren.com/duxieren.xml
-http://www.read.org.cn/feed
-https://news.mingpao.com/rss/pns/s00004.xml
-https://news.mingpao.com/rss/pns/s00013.xml (okish)
-http://today-america.com/feed/
-http://cn.chinadaily.com.cn/
-http://www.chinadaily.com.cn/rss/index.html
-https://www.rthk.hk/?lang=en
-https://rss.sina.com.cn/
-http://www.ftchinese.com/rss/feed
-http://www.chinadaily.com.cn/rss/bizchina_rss.xml
-// "http://www.chinadaily.com.cn/rss/bizchina_rss.xml"
-        // " http://www.chinanews.com/rss/finance.xml"
-
-http://std.stheadline.com/
-https://www.worldjournal.com
-http://www.china.com.cn
-
-
-*/
+module.exports = { activeFeeds };

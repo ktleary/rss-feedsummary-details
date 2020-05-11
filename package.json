@@ -16,7 +16,7 @@
   "author": "ktlry",
   "license": "ISC",
   "dependencies": {
-    "content-scanning": "file:../content-scanning"
+    "feedscanner": "file:../feedscanner"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
