@@ -1,22 +1,11 @@
 /* eslint-disable */
 const test = require("ava");
-const {
-  getRandomItem,
-  length,
-  oneItemArray,
-  oneRandomItemArray,
-  pickRandomIndex,
-} = require("../util/random");
+const R = require("ramda");
+const { listOfOne, randomInt, getRandomItem, randomItemList } = require("../util/random-item");
 
-test("it returns the length of the list", t => {
-  const list = [1, 2, 3];
-  t.is(length(list), 3);
-});
-
-test("it returns number between zero and list length minus 1 ", t => {
-  const list = ["one", "two", "three"];
-  const randomIndex = pickRandomIndex(list);
-  t.true(randomIndex >= 0 && randomIndex <= length(list));
+test("it returns an integer between zero and 5", t => {
+  const int = randomInt(0, 5);
+  t.true(R.gte(int, 0) && R.lte(int, 5));
 });
 
 test("it returns one (random) item from the list ", t => {
@@ -27,14 +16,13 @@ test("it returns one (random) item from the list ", t => {
     "http://www.xinhuanet.com/english/rss/scirss.xml",
   ];
   const picked = getRandomItem(list);
-  console.log(picked);
-  t.true(list.includes(picked));
+  t.true(R.includes(picked, list));
 });
 
-test("it wraps an item in an array", t => {
+test("it wraps an item in a list", t => {
   const item = "https://www.xinwengao.com/china-pr/business-finance/feed/";
-  const itemArray = oneItemArray(item);
-  t.true(itemArray.includes(item) && length(itemArray) === 1);
+  const itemArray = listOfOne(item);
+  t.true(R.includes(item, itemArray) && R.length(itemArray) === 1);
 });
 
 test("it returns an array of one Random Item", t => {
@@ -44,6 +32,6 @@ test("it returns an array of one Random Item", t => {
     "https://www.xinwengao.com/china-pr/business-finance/feed/",
     "http://www.xinhuanet.com/english/rss/scirss.xml",
   ];
-  const oneItemArray = oneRandomItemArray(list);
-  t.true(Array.isArray(oneItemArray) && length(oneItemArray) === 1);
+  const oneItemArray = randomItemList(list);
+  t.true(Array.isArray(oneItemArray) && R.length(oneItemArray) === 1);
 });

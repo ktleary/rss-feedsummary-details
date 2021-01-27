@@ -1,21 +1,22 @@
 const feedscanner = require("feedscanner");
-const { getRandomFromArray } = require("./utils/helpers");
-let { activeFeeds } = require("./config/feeds");
+const { logstring } = require("./util/log");
+const { activeFeeds } = require("./config/feeds");
 const { keywords } = require("./config/keywords");
+const { env } = require("./config/env");
+const { oneRandomItemArray } = require("./util/random");
 
-const getRandomItem = items => items[Math.floor(Math.random() * arr.length)];
 
-module.exports = { getRandomFromArray };
 
 async function main() {
-  const devmode = true;
-  if (devmode) activeFeeds = [getRandomFromArray(activeFeeds)];
-
-  console.log(JSON.stringify({ activeFeeds }));
+  const currentFeeds = env.dev ? oneRandomItemArray(activeFeeds) : getActiveFeeds(activeFeeds);
   const topicKeywords = keywords.automation;
   const feedSummary = await feedscanner(activeFeeds[0], topicKeywords, []);
 
-  console.log(feedSummary);
+  logstring({ currentFeeds }); // eslint-disable-line
+  return logstring(feedSummary);
 }
 
+/* eslint-disable fp/no-unused-expression */
 main();
+
+module.exports = { getRandomFromArray };
