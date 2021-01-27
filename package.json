@@ -4,7 +4,7 @@
   "description": "feed-scanner",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -16,14 +16,13 @@
   "author": "ktlry",
   "license": "ISC",
   "dependencies": {
-    "feedscanner": "file:../feedscanner"
+    "101": "^1.6.3",
+    "eslint-plugin-fp": "^2.3.0",
+    "feedscanner": "^0.1.0"
   },
   "devDependencies": {
+    "ava": "^3.15.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-github": "^3.4.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^2.0.2"
+    "eslint": "^7.18.0"
   }
 }
