@@ -1,4 +1,4 @@
-const compose = require("101/compose");
+const R = require("ramda");
 
 // logger :: Object -> string
 const logger = message => console.log(message);
@@ -7,6 +7,6 @@ const logger = message => console.log(message);
 const stringer = item => JSON.stringify(item);
 
 // logstring :: Object -> string -> string
-const logstring = compose(logger, stringer);
+const logstring = R.compose(logger, stringer);
 
 module.exports = { logger, logstring };

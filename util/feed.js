@@ -1,9 +1,12 @@
-const length = require("ramda/src/length");
-const activeFeeds = require("../config/feeds");
+const R = require("ramda");
+const { randomItemList } = require("./random-item");
+const { activeFeeds } = require("../config/feeds");
+const { env } = require("../config/env");
 
 // getActiveFeeds :: [string] -> [string]
-function getActiveFeeds(feeds = activeFeeds) {
-  return length(feeds) ? feeds : [];
+function getFeeds({ feeds = activeFeeds, isDev = env.dev }) {
+  if (!R.length(feeds)) return [];
+  return isDev ? randomItemList(feeds) : feeds;
 }
 
-module.exports = { getActiveFeeds };
+module.exports = { getFeeds };

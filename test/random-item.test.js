@@ -1,11 +1,12 @@
 /* eslint-disable */
 const test = require("ava");
 const R = require("ramda");
-const { listOfOne, randomInt, getRandomItem, randomItemList } = require("../util/random-item");
+const { listOfOne, randomIndex, getRandomItem, randomItemList } = require("../util/random-item");
 
-test("it returns an integer between zero and 5", t => {
-  const int = randomInt(0, 5);
-  t.true(R.gte(int, 0) && R.lte(int, 5));
+test("it returns a list index between zero and list length -1 ", t => {
+  const list = [1, 2, 3];
+  const int = randomIndex(0, R.length(list));
+  t.true(R.gte(int, 0) && R.lte(int, 2));
 });
 
 test("it returns one (random) item from the list ", t => {

@@ -39,7 +39,6 @@ const activeFeeds = [
   "https://www.mercatus.org/feed",
   "https://www.lawfareblog.com/feed/",
   "https://ec.europa.eu/information_society/newsroom/cf/generaterss.cfm?tpa_id=16547&sub=1&pr=all",
-  "http://news.mit.edu/rss/topic/artifici",
 ];
 
 module.exports = { activeFeeds };
